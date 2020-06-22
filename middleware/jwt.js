@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
     }
 
     try {
-        const decodedtoken = jwt(authheader, 'secretthanigai');
+        const decodedtoken = jwt.verify(authheader, 'secretthanigai');
     } catch {
         res.status(500).json({ message: "error occured" });
     }
